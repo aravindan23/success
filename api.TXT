@@ -1,0 +1,23 @@
+1.search/content?q=TYPE:%22organization%22
+
+2.search/content?q=TYPE:%22job%22%20AND%20=parentId:%229b53cb8c-54d8-4f6a-b8af-7d27ddb836ef%22&rows=0&properties=masterJobId,parentId,jobId,jobStatus,jobState,jobType&facet=true
+
+3.search/content?q=TYPE:%22job%22%20AND%20=parentId:%220%22%20AND%20NOT%20=jobState:%22Complete%22&sort=lastModificationDate%20desc
+
+4.search/content?q=TYPE:%22batch%22%20AND%20(%3DbatchStatus:%22In%20progress%22%20OR%20%3DbatchStatus:%22Cancelling%22)
+
+5.search/content?q=TYPE:%22batchJob%22%20AND%20(parentBatch:%222545522a-693f-44c6-82bc-69efc9aa5dc4%22)%20AND%20(batchJobStatus:%22Successful%22%20OR%20batchJobStatus:%22Failed%22%20OR%20batchJobStatus:%22Cancelled%22)
+
+6.search/content?q=TYPE:%22batch%22%20AND%20isJob:true%20AND%20(=batchStatus:%22Successful%22%20OR%20=batchStatus:%22Partially%20Successful%22%20OR%20=batchStatus:%22Failed%22%20OR%20=batchStatus:%22Cancelled%22)%20AND%20NOT%20isPublishPending:true&properties=objectId,lastModifiedBy,jobId,masterJobId,batchStatus
+
+7.search/content?q=TYPE:%22batchJob%22%20AND%20(parentBatch:%22e187e5fd-90ca-4f22-b7ff-babb26e9aad6%22)%20AND%20(batchJobStatus:%22Successful%22%20OR%20batchJobStatus:%22Failed%22%20OR%20batchJobStatus:%22Cancelled%22)
+
+8.search/content?q=TYPE:%22job%22%20AND%20=parentId:%220%22%20AND%20NOT%20=jobState:%22Complete%22&properties=objectId,masterJobId,lastModifiedBy,jobType,lastModificationDate&sort=lastModificationDate%20desc
+
+9.search/content?q=TYPE:%22batch%22%20AND%20isJob:true%20AND%20(=batchStatus:%22Successful%22%20OR%20=batchStatus:%22Partially%20Successful%22%20OR%20=batchStatus:%22Failed%22%20OR%20=batchStatus:%22Cancelled%22)%20AND%20NOT%20isPublishPending:true&properties=objectId,lastModifiedBy,jobId,masterJobId,batchStatus (Devint) - devint-java-log
+
+
+
+
+
+

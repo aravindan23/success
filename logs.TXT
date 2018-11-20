@@ -1,0 +1,44 @@
+1.http://00-stage-01-00.highroads.local:8080/search/content?q=TYPE:"group" AND = groupNumber:"TESTGRPB11" (stage logs)
+
+2.Document association deleted successfully with DocumentID455face5-7d2b-43b4-91d8-c409ad1e565c (stage logs)
+
+3.ok can u search the other error 
+
+MM:
+
+" inactive rule list "
+
+
+mutate {
+    match => [ "request_page" ,"/.+/" ]
+    target => ["p2a_service]
+    }
+if [request_page] =~ /.+/{
+target => ["p2a_service]
+
+mutate {
+    remove_field => { "p2a_service" => "%{(/.+/)request_page}" }
+}
+
+
+/%{GREEDYDATA:uri_stem}(/.+/)
+
+/%{GREEDYDATA:uri_stem}(.?/)
+add_field => { "p2a_service" => "%{
+mutate {
+    rename => [ "[uri_stem]", "[p2a_service]" ]
+    convert => [ "[p2a_service]", "string" ]
+    }
+
+mutate {
+    gsub => [ "p2a_service", "/(?:\w+)(?:\w+$)" , "" ]
+}
+
+
+
+10.238.1.9 bldint-bcbsnc.highroads.local
+10.238.0.127 bldint-bcbsnc.highroads.local
+10.238.0.67 bldstb-bcbsnc.highroads.local
+10.238.1.98 devint-bcbsnc.highroads.local
+10.238.0.181 qaint-bcbsnc.highroads.local
+10.238.1.192 qaint-bcbsnc.highroads.local

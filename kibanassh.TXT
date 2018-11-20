@@ -1,0 +1,16 @@
+kibanabrowser:
+10.6.7.39-kibanaadmin,HighRoads_1234
+10.239.2.56-kibanaadmin,abcd123
+10.46.8.53-kibanaadmin,abcd1234
+10.46.2.22-kibanaadmin,kibana1234
+10.46.3.58-kibanaadmin,abcd@123
+10.46.3.24-kibanaadmin,abcd@1234
+
+
+ELK ssh:
+Devint:10.239.2.56 root K1baNa@1217
+sandbox:10.46.3.58 root K1baNa@1217
+stage:10.46.8.53 root K1baNa@1217
+prod:10.46.2.22 root K1baNa@1217
+test:10.46.3.24 saltadmin $a1taDmin#
+

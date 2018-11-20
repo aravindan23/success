@@ -1,0 +1,34 @@
+(install in ELKSERVERS)   (email-alert)elastalert installation
+
+yum install git
+yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+yum install docker-ce
+service docker start
+cd /opt/
+git clone https://git.bitsensor.io/back-end/elastalert.git
+cd elastalert/
+vi config/elastalert.yaml 
+cd config/config.json (elastalert-server)
+mkdir rules
+ls
+vi Dockerfile
+docker build . -t elastalert
+docker images
+docker run -d -p 3030:3030 -v /opt/elastalert/config/elastalert.yaml:/opt/elastalert-server/config.yaml -v /opt/elastalert/config/config.json:/opt/elastalert-server/config/config.json -v /opt/elastalert/rules:/opt/elastalert-server/rules -v /opt/elastalert/rule_templates:/opt/elastalert-server/rule_templates --net="host" --name elastalert elastalert:latest
+docker ps -all
+docker logs elastalert
+docker exec -it elastalert "/bin/sh"
+systemctl restart kibana
+telnet 10.239.2.176 25(smtp port)
+cd rules/
+ls
+vi Docgenerr1.yaml
+
+-v-volume mount(mount in outer files change reply to inner)
+ 
+-p is used to map the port number of the internal Docker image to our main server 
+docker exec -it elastalert "/bin/sh"
+run/exec
+Here, elastalert is the name of the image we want to download from Docker Hub and install on our Ubuntu machine.
+-it is used to mention that we want to run in interactive mode.
+/bin/bash is used to run the bash shell once CentOS is up and running.

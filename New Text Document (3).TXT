@@ -1,0 +1,62 @@
+New Builds:
+CM-22
+SEARCH-5
+PPM-8
+Gateway-6
+UI-15
+MM-5
+DOCGEN-8
+DATAFEED-8
+REPORT-6
+NM-6
+MCM-7
+BATCH-5
+MARKLOGIC-6
+RULES-9
+
+
+Hi All,
+
+HRAF sanity tests passed against BLDINT. Following components will be deployed in DEVINT, QAINT & QAINT2.
+
+
+Changes:
+http://192.168.2.110/cgi-bin/envStatus.cgi
+
+
+CM:
+HIGRDS-15198-(Bootstrap-6.45)Clear out / populate additional fields on
+
+SEARCH:
+HIGRDS-15395 TokenUtils accepts array of roles and remove preAuthorized 
+
+PPM:
+HIGRDS-15198-Clear out / populate additional fields on the plan when a.
+
+UI:
+HIGRDS-15235 Update plan Level Cost Share table.
+HIGRDS-15235 Update plan Level Cost Share table.
+HIGRDS-15156 : Manage the User Roles & Template locking & unlocking.
+HIGRDS-14957 RPA datafeedId is mapped to the planAdapter transformType.
+
+MM:
+HIGRDS-15323 User needs to see all inactive rules before being able to.
+
+DOCGEN:
+
+
+
+
+
+
+
+Hi All,
+
+Following components were successfully deployed in DEVINT, QAINT & QAINT2.
+All Components are up & running.
+
+
+
+docker run -d -it --name testfilebeat -v /root/testfilebeat/filebeat.yml:/filebeat.yml -v /etc/pki/tls/testcerts/logstash-forwarder.crt:/etc/pki/tls/certs/logstash-forwarder.crt -v /mnt/syslogng/p2alogs/TEST/NET/:/mnt/syslogng/p2alogs/TEST/NET/ prima/filebeat:latest 
+
+%{IP:client} %{HTTPDATE:apache_timestamp} %{WORD:method} HTTP/%{NUMBER:http_version}

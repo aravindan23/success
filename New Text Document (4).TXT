@@ -1,0 +1,73 @@
+pattern:
+55.3.244.1 28/Aug/2018:03:34:35 -0400 GET /app HTTP/1.1 200 310 "https://ssodev.highroads.local/idp/oc531/resumeSAML20/idp/startSSO.pingMozilla/5.0(Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36"
+
+
+grok
+{
+match => { "message" => "%{IP:client} - - \[%{HTTPDATE:apache_timestamp}\] \"%{WORD:method} /%{NOTSPACE:api} HTTP/%{NUMBER:http_version}\" %{NUMBER:server_response} %{NUMBER:bytes_sent} %{NOTSPACE:request_page}" }
+}
+
+input {stdin {codec => json}}
+filter {
+  mutate {
+    # Change FOO to lowercase
+    rename => [ "FOO", "foo" ]
+    # Duplicate foo and name it bar
+    add_field => {
+      "bar" => "%{foo}"
+    }
+    # Remove all digits from foo except [0-9]
+    gsub    => [ "foo", "\D", "" ]
+    # Convert foo field to digit
+    convert => [ "foo", "integer"]
+  }
+}
+
+
+
+mutate {
+    add_field => { "request" => "/%{NOTSPACE:request_page}" }
+    gsub => [ "request_page", "/.+/" , "" ]
+    rename => [ "[request_page]", "[p2a_service]" ]
+    convert => [ "[p2a_service]", "string" ] 
+}
+
+
+^(.?^\/\w+)
+
+
+if [request] == "cm/types/batch" {
+mutate {
+ gsub => [ "p2a_service", "/(?:\w+)(?:.\w+$)" , "" ]
+}
+}
+else if [request] == "search/content?q=TYPE:%22organization%22" {
+mutate {
+ gsub => [ "p2a_service", "/(?:\w+)(?:.{25}\w+$)" , "" ]
+}
+}
+else if [request] == "search/content?q=TYPE:%22batchJob%22%20AND%20(parentBatch:%22e187e5fd-90ca-4f22-b7ff-babb26e9aad6%22)%20AND%20(batchJobStatus:%22Successful%22%20OR%20batchJobStatus:%22Failed%22%20OR%20batchJobStatus:%22Cancelled%22)" {
+mutate {
+ gsub => [ "p2a_service", "/(?:\w+)(?:.{200}\w+\S$)" , "" ]
+}
+}
+else {
+mutate {
+ gsub => [ "p2a_service", "/(?:\w+)(?:\w+$)" , "" ]
+}
+}
+
+(?:\w+)(?:.\w+$) /cm/type/batch
+(?:\w+)(?:\w+$)  /cm/version
+
+
+(?:\w+)(?:.{25}\w+$)
+search/content?q=TYPE:%22organization%22
+
+I'm using this pattern: (?:\w+)(?:.{200}\w+\S$)
+search/content?q=TYPE:%22batchJob%22%20AND%20(parentBatch:%22e187e5fd-90ca-4f22-b7ff-babb26e9aad6%22)%20AND%20(batchJobStatus:%22Successful%22%20OR%20batchJobStatus:%22Failed%22%20OR%20batchJobStatus:%22Cancelled%22)
+
+/(?:\w+)(.+)-->search,cm/version
+
+
+orchestration,rules

@@ -16,7 +16,13 @@
 
 9.search/content?q=TYPE:%22batch%22%20AND%20isJob:true%20AND%20(=batchStatus:%22Successful%22%20OR%20=batchStatus:%22Partially%20Successful%22%20OR%20=batchStatus:%22Failed%22%20OR%20=batchStatus:%22Cancelled%22)%20AND%20NOT%20isPublishPending:true&properties=objectId,lastModifiedBy,jobId,masterJobId,batchStatus (Devint) - devint-java-log
 
+thiruvilayadal
+ulagam sutrum
+puthumaipit
+arunagirinat
+mayabazzaar
 
+Reference ID: CT20182605284
 
 
 

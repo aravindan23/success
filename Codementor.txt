@@ -1,0 +1,22 @@
+Codementor (20-7-18)
+
+Credentials:
+
+Username - aravindansankar97@gmail.com
+
+Password - general@12 
+
+
+
+/etc/sysconfig/iptables
+
+
+kyto:
+aravindansankar97@gmail.com
+changeme1
+
+https://github.com/aravindan23/success.git
+gitpass1234
+
+
+23/08/18 all syslog for sandbox and stage

@@ -1,0 +1,185 @@
+                                 How to Install and Configure Apache Hadoop on a Single Node in CentOS 7
+
+Step 1: Install Java on CentOS 7
+i)first login with root user or a user with root privileges setup your machine hostname
+hostnamectl set-hostname master
+
+ii)add a new record in hosts file with your own machine FQDN to point to your system IP Address
+vi /etc/hosts
+EX: 192.168.1.41 master.hadoop.lan
+
+iii)Install JAVA
+curl -LO -H "Cookie: oraclelicense=accept-securebackup-cookie" “http://download.oracle.com/otn-pub/java/jdk/8u92-b14/jdk-8u92-linux-x64.rpm”
+rpm -Uvhjdk-8u92-linux-x64.rpm
+
+Step 2: Install Hadoop Framework in CentOS 7
+
+i)create a new user account on your system without root powers
+useradd -d /opt/hadoop hadoop
+passwd hadoop
+
+ii)Install hadoop
+curl -O http://apache.javapipe.com/hadoop/common/hadoop-2.7.2/hadoop-2.7.2.tar.gz
+ 
+iii)copy the directory content to hadoop account home path and change copied file permissions
+tar xfz hadoop-2.7.2.tar.gz
+cp -rf hadoop-2.7.2/* /opt/hadoop/
+chown -R hadoop:hadoop /opt/hadoop/
+
+iv)login with hadoop user and configure Hadoop and Java Environment Variables in .bash_profile
+su - hadoop
+vi .bash_profile
+
+Append the following lines at the end of the file:
+
+## JAVA env variables
+export JAVA_HOME=/usr/
+export PATH=$PATH:$JAVA_HOME/bin
+export CLASSPATH=.:$JAVA_HOME/jre/lib:$JAVA_HOME/lib:$JAVA_HOME/lib/tools.jar
+
+## HADOOP env variables
+export HADOOP_HOME=/opt/hadoop
+export HADOOP_COMMON_HOME=$HADOOP_HOME
+export HADOOP_HDFS_HOME=$HADOOP_HOME
+export HADOOP_MAPRED_HOME=$HADOOP_HOME
+export HADOOP_YARN_HOME=$HADOOP_HOME
+export HADOOP_OPTS="-Djava.library.path=$HADOOP_HOME/lib/native"
+export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native
+export PATH=$PATH:$HADOOP_HOME/sbin:$HADOOP_HOME/bin
+
+v)check environment variables status
+source .bash_profile
+echo $HADOOP_HOME
+echo $JAVA_HOME
+
+vi)configure ssh key based authentication for hadoop
+NOTE:leave the passphrase filed blank as empty
+
+ssh-keygen -t rsa
+ssh-copy-id master.hadoop.lan
+
+Step 3: Configure Hadoop in CentOS 7
+
+i)setup Hadoop cluster on a single node in a pseudo distributed mode by editing its configuration files.
+vi etc/hadoop/core-site.xml
+
+Add the following properties between <configuration> ... </configuration> tags.
+<property>
+    <name>fs.defaultFS</name>
+    <value>hdfs://master.hadoop.lan:9000/</value>
+</property>
+
+ii)namenode path and datanode path for local file systems.
+vi etc/hadoop/hdfs-site.xml
+
+Add the following properties between <configuration> ... </configuration> tags.
+<property>
+    <name>dfs.data.dir</name>
+    <value>file:///opt/volume/datanode</value>
+  </property>
+
+  <property>
+    <name>dfs.name.dir</name>
+    <value>file:///opt/volume/namenode</value>
+</property>
+
+iii)we need to create those two directories (datanode and namenode) from root account and grant all permissions to hadoop account
+
+su root
+mkdir -p /opt/volume/namenode
+mkdir -p /opt/volume/datanode
+chown -R hadoop:hadoop /opt/volume/
+ls -al /opt/  #Verify permissions
+exit  #Exit root account to turn back to hadoop user
+
+iv)we are using yarn MapReduce framework.
+vi etc/hadoop/mapred-site.xml
+
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<configuration>
+  <property>
+    <name>mapreduce.framework.name</name>
+    <value>yarn</value>
+  </property>
+</configuration>
+
+v)edit yarn-site.xml file 
+vi etc/hadoop/yarn-site.xml
+
+Add the following properties between <configuration> ... </configuration> tags.
+<property>
+    <name>yarn.nodemanager.aux-services</name>
+    <value>mapreduce_shuffle</value>
+</property>
+
+vi)set Java home variable for Hadoop environment 
+vi etc/hadoop/hadoop-env.sh
+
+Edit following line
+export JAVA_HOME=/usr/
+
+vii)replace the localhost value from slaves file to point to your machine hostname set up at beginning
+vi etc/hadoop/slaves
+
+Step 4: Format Hadoop Namenode
+
+i)initialize HDFS file system by formatting the /opt/volume/namenode storage directory
+hdfs namenode -format
+
+Step 5: Start and Test Hadoop Cluster
+
+i)Hadoop commands are located in $HADOOP_HOME(/opt/hadoop)/sbin directory
+
+start-dfs.sh
+start-yarn.sh 
+
+ii)check service status
+
+jps
+
+iii)list of all open sockets 
+
+ss -tul
+ss -tuln
+
+iv)To test hadoop file system cluster create a random directory in the HDFS file system and copy a file from local file 
+   system to HDFS storage (insert data to HDFS). 
+
+hdfs dfs -mkdir /my_storage
+hdfs dfs -put LICENSE.txt /my_storage
+
+v)view a file content or list a directory inside HDFS file system
+
+hdfs dfs -cat /my_storage/LICENSE.txt
+hdfs dfs -ls /my_storage/
+
+vi)retrieve data from HDFS to our local file system
+
+hdfs dfs -get /my_storage/ ./
+
+Step 6: Browse Hadoop Services
+
+i)Hadoop Overview of NameNode service.
+
+http://192.168.1.41:50070 
+
+ii)Hadoop file system browsing directory
+http://192.168.1.41:50070/explorer.html
+
+iii)For cluster and apps information
+http://192.168.1.41:8088 
+
+iv)nodemanager information
+http://192.168.1.41:8042 
+
+Step 7: Manage Hadoop Services
+
+i)stop all hadoop instances
+
+stop-yarn.sh
+stop-dfs.sh 
+
+
+   

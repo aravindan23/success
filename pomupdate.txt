@@ -1,0 +1,30 @@
+change branch-cut
+
+release to main
+revision id change
+1.cherrypick ==>main
+2.(if more)merge branch
+
+java pom file update
+
+git reset --merge(merge conflict occurs)
+cd HR_SOURCE/
+cd ../service/
+git branch (if main else checkout to main)
+git checkout Main
+git pull
+git checkout release version-Main(ex:Release-2.19.1)
+sed cmd  sed -i 's/2.22.0-SNAPSHOT/2.23.0-SNAPSHOT/g' pom.xml
+git diff #changes (conflicts sometimes occur) vi pom.xml to change
+git add pom.xml
+git commit -m "HIGRDS-16472: Update SNAPSHOT version in java projects pom.xml file"
+git push origin HEAD:refs/for/Main
+
+10.6.4.17 root/abcd123
+
+Hint: To automatically insert Change-Id, install the hook:
+remote:   gitdir=$(git rev-parse --git-dir); scp -p -P 29418 gobala@gerrit.insurance-engine.com:hooks/commit-msg ${gitdir}/hooks/
+remote: And then amend the commit:
+remote:   git commit --amend(change commit status)
+
+git branch--rebase

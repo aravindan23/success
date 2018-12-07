@@ -1,0 +1,551 @@
+Daily Status
+mravi@terafastnet.com
+agobal@terafastnet.com
+Daily Status-(27.09.18)
+7-7-18
+Hi sir,
+
+       Today I learned how to upgrade elk 5.x to 6.x.Upgrade 5 to 6 gets extra application settings like x-pack be present.
+Using X-pack monitoring,application performance monitoring(APM),Watcher(e-mail alert) easily be used and they are present 
+in default.
+
+10-07-18
+Hi Sir,
+       
+       Today I learned how to upgrade and configure the elasticsearch,logstash,kibana from version 5 to 6 and I upgraded 
+the elasticsearch,logstash,kibana version 5.6.3 to 6.3.1 in local server.
+
+11-07-2018
+Hi Sir,
+The status summary as follows for the day!
+
+On HIGRDS-15069 Upgrade DEVINT ELK from 5.x to 6.x 
+Upgraded ELK from 5.6.3 to 6.3.1 version
+
+On HIGRDS-14477 Create 2.18.0 branch from Main    
+Created 2.18.0 branch from Main
+
+On HIGRDS-14478  Update SNAPSHOT version in java projects pom.xml file
+Updated SNAPSHOT version in java projects pom.xml file
+
+12-07-2018
+Hi Sir,
+       Install filebeat in prod orchestration server.
+       configure p2atime in logstash for stage environment.
+       create orchestration index for prod and Devint in Kibana. 
+
+13-07-2018
+Hi Sir,
+      Created Dashboards in prod,stage,sandbox for the following parameters
+      HTTP STATUS,Apitime,tracking id is missing,document existent check failed. 
+
+14-07-18
+Hi Sir,
+      The status summary as follows for the day!
+
+      Configured elasticsearch-curator for automatically delete the log files in regular interval in localserver.
+      Created Dashboards in Kibana UI for DEVINT environment for the following parameters,
+      i)Document association creation-Document association created successfully,Document notifications Created successfully,
+       Document Uploaded Successfully,Unable to create associations.
+      ii)API STATUS-api_time,HTTP STATUS,Exception occurs while getting on GetResponse.
+      iii)Template Metadata-Error of Evaluating Expressions,Applying Boolean Expression.
+      iV)Document Errors-unable to create associations between docnames,duplicate docnames found.
+
+HIGRDS-14995 -  Setting up ELK in PROD
+
+
+16-07-18
+
+Hi Sir,
+       The status summary as follows for the day!
+
+Closed Story:
+On HIGRDS-15069: Upgrade DEVINT ELK from 5.x to 6.x
+
+Add visualize for Document generation count in week,Short Name Dictionaries based on wildcard short name and instance json in DEVINT ELK.
+Created Dashboards for API STATUS in STAGE,SANDBOX ELK.
+Add visualize for unable to create association between documents, in PROD ELK.
+
+17-07-18
+
+Add visualize and create Dashboards for duplicate docnames found,Short Name Dictionaries based on wildcard short name and instance json,Tracking ID is missing,Document Association Created and document uploaded with Id in sandbox in PROD ELK(Syslogs).
+Add geoip plugin in local server and Devint.
+
+18-07-18
+
+Hi Sir,
+      The status summary as follows for the day!
+
+Add logs and test geoip in local server and Devint.
+Install and Configure Elasticsearch-curator in local server and Devint
+Add Dashboards for create Document Associations,Exception occurs while getting on GetResponse in stage environment,Unable to create association between documents in stage.
+
+23-07-18
+Install and configure docker filebeat in local server and create index for that.
+
+Install docker filebeat in prod syslog.
+
+24-07-18
+
+Hi Sir,
+      The status summary as follows for the day!
+
+ON HIGRDS-15192:Configuring multiple filebeat applications in syslog server with the help of docker.
+
+25-07-18
+
+Hi Sir,
+
+       The status summary as follows for the day!
+On HIGRDS-14858 Create 2.18.1 branch from Main    
+Created 2.18.1 branch from Main
+
+On HIGRDS-14859  Update SNAPSHOT version in java projects pom.xml file
+Updated SNAPSHOT version in java projects pom.xml file
+
+26-07-18
+
+Hi Sir,
+      The status summary as follows for the day!
+
+ Added Dashboards in Sandbox and Stage environments.
+ Learning P2A Application.
+30.07.18
+
+Learning pipeline and its types in jenkins.
+Learn how to create jenkinsfile and its syntaxes.
+Add visualize for top api calls in prod Elk.
+
+31.07.18
+
+Knowing about the jenkins declarative plugin & its features.
+Learning the pipeline concepts.
+Installed saltmaster 2018 zip in salt master machine
+
+01.08.18
+
+Installed and Configured latest Salt-master and Salt-minion in salt machines.
+
+Add Dashboard for jobstatus failed.
+
+Configured elastalert in sandbox.
+
+02.08.18
+
+Hi Sir,
+      The status summary as follows for the day!
+
+Add Elastalert Notification in sandbox for "JSON SCHEMA VALIDATION FAILED" 
+Learning Basic Docker and Salt Commands.
+Learning what is Flink apache.
+
+Hi Sir,
+      The status summary as follows for the day!
+
+clear logs manually in stage ELK for disk space. 
+
+Install and Configured Elasticsearch-curator in local and DEVINT machine for automatically delete the log indices after 30 days.
+
+Configured and test latest salt-version in qaint machine.
+ 
+04-08-2018
+
+Hi Sir,
+
+        The status summary as follows for the day!
+
+
+
+Install and configured elastalert in prod and stage environments.
+
+Install and configured elasticsearch-curator in sandbox,stage,prod environments.
+
+Learning basics of python.
+
+06-08-2018
+
+
+Hi Sir,
+       The status summary as follows for the day!
+
+Learning python basic programming.
+Learning what is apache kafka and how it works.
+07-08-18
+
+Learning Apache Flink,kafka,zookeeper and how its terms.
+Learning what is docker with kubernetes.
+
+09-08-18
+Hi Sir,
+       The status summary as follows for the day!
+
+Resolve issue in devint curator.
+
+ON HIGRDS-15363 : Setting Up Elasticsearch,Kibana,Logstash in Test Environment.
+
+10-08-18
+
+Hi Sir,
+      The status summary as follows for the day!
+
+Install filebeat using docker in syslog server for test environment.
+Tried Document generation and batch process in qaint environment.
+
+11-08-18
+
+Hi Sir,
+      The status summary as follows for the day!
+
+Install filebeat using in orchestration server for test environment.
+Tried Document generation and batch process in qaint and qaint2 environment.
+Learning apache flink,kafka architectures and its features.
+
+13-08-18
+Today Status
+closed story:
+On HIGRDS-15363 - Setting up ELK in TEST Environment.
+Manually delete logs in sandbox environment.
+Learning how to up services and manually debug issues.   
+
+14-08-18
+
+Today Status:
+Add elastalert notification for "error of evaluating expression" in prod,stage environments.
+Generated batch documents in qaint and qaint2.
+Learn Docker compose and its syntax and how to write Dockerfile.
+Reinstall the curator in DEVINT.
+
+
+Thanks,
+S.Aravindan     
+
+16-08-18
+Today Status:
+Debug issue in Devint ELK.
+Learning python basics(control flow,datastructures,input & output formats,exception handling).
+Generate documents and batch in Qaint and Qaint2.
+
+17-08-18
+
+Today Status:
+Learning Kafka installation and its messaging system in aws.
+Code some python sample scripts.
+Learning reset Bootstrap version.
+Generate documents in qaint,bldstble environments.
+
+18-08-18
+
+Learn python scripting.
+Learn sso,LDAP and how it works.
+Try sso creation for kibana in local setup using okta.
+Manually delete logs in devint and sandbox logs.
+Generate documents for test in qaint2.
+
+20-08-18
+Today Status:
+HIGRDS-15473 - Deployment to DEVINT, QAINT & QAINT2 - 20-Aug-2018 with a resolution of 'Complete'.
+Learning kafka for fault tolerant with multiple clusters.
+Manually delete logs in devint-orchestration,devint-marklogic ELK.
+
+21-08-18
+Today Status:
+Learning jenkins pipeline and its syntax and try in local setup.
+Learning conversion of python to JSON and JSON to python scripts and try in local setup.
+Learn different jenkins plugins.
+
+22-08-18
+Today Status:
+closed story:
+HIGRDS-15211 - Created 2.19.1 branch from Stable 2.19.0 branch with a resolution of 'Complete'
+HIGRDS-15212 -Updated SNAPSHOT version in java projects pom.xml file.
+Learn git commands.
+Debug issue in devint ELK.
+
+23-08-18
+Today Status:
+Debug issue in sandbox ELK and stage ELK syslogs.(logs are not coming)
+Install curator in test environment for automatically delete logs after 30days.
+Learn network linux commands.
+
+24-08-18
+Hi Sir,
+      The status summary as follows for the day!
+
+Learn linux commands.
+Learn Apache flink and kafka use cases.
+Learn machine learning feature in kibana.
+Add machine learning and Graph feature in devint ELK.
+Add timestamp and message fields pattern for checking machine learning feature in Devint ELK.
+
+25.08.18
+Hi Sir,
+      The status summary as follows for the day!
+
+Debug issue in Devint Elk.(logstash stopped for error in config file)
+Learn reporting and watcher features in kibana.
+Add reporting for download saved visualization,dashboard in documents.
+Add visualize for aspose failed in devint Elk.
+
+27.08.18
+
+Add Dashboard for group in Stage Elk.
+Add searches for logs Document association deleted and inactive rule list in Devint ELK.
+Add ml for duplicate docnames in Devint ELK.
+Generate documents in qaint and qaint2 environments. 
+Learn jenkins plugins.
+
+28.08.18
+
+Add grokpattern for logstash to filter ui logs in devint,sandbox,stage Elk.
+Add ui logs in devint,stage,sandbox java logs.
+Remove last month logs in sandbox for free memory space. 
+Generate documents in qaint and qaint2 for manual checking.  
+
+29.08.18
+Today Status:
+HIGRDS-15626- Capturing p2a ui logs in ELK for production & non production Environments.
+Debug issue for stage_ui logs in stage ELK.
+Add filebeat for prod ui servers.
+Add grokpattern for logstash to filter ui logs in prod Elk.
+Add ui logs in prod ELK.
+Learn grok patterns and regular expressions.
+
+30.08.18
+
+Learn flink orchestration and kafka for p2a services.
+Learn grok filters and regular expressions for logstash.
+Add grok pattern for devint ELK logstash.
+
+31.08.18
+
+Hi Sir,
+      The status summary as follows for the day!
+
+Learn grok patterns and add logstash filter for extarct p2aservice as field in DEVINT ELK.
+Generated documents in Qaint and Qaint2 environments.
+Learn jenkins declarative pipeline syntax.
+Hide fields in horizonblue and bcbscn tenants plans page. 
+
+01.09.18
+
+Hi Sir,
+      The status summary as follows for the day!
+
+Add Ui logs in test ELK environment.
+Add grok pattern and filter p2aservice from request api.
+Add p2aservice as field in Devint Elk environments.(Ex.p2aservice:cm,ppm,mcm etc...) and search logs.
+Generated documents in Qaint and Qaint2 environments.
+Learn pipeline and test local jenkins setup.
+
+03.09.18
+
+Hi Sir,
+       The status summary as follows for the day!
+Today Status:
+Add p2aservice as field in sandbox,stage,prod,test Elk environments.
+Deploy Qaint2 environment.
+Generated documents in Qaint2 environment.
+upgrade filebeat in test Elk environment.
+
+04.09.18
+Hi Sir,
+       The status summary as follows for the day!
+closed story:
+HIGRDS-15702-Create p2a_service as a field in accesslogs for production and non-production ELK environments.
+
+Debug issue in test ELK.(Logs not came orchestration and java logs).
+Learn p2a orchestartion.
+Add Dashboards in devint Elk.
+
+05.09.18
+
+closed story:
+On HIGRDS-15517 - Created 2.20.0 branch from Main with a resolution of 'Complete'.
+On HIGRDS-15518 - Updated SNAPSHOT version in java projects pom.xml file. with a resolution of 'Complete.
+
+Learn kafka cluster setup with high availability with zookeeper.
+
+06.09.18
+Hi Sir,
+       The status summary as follows for the day!
+
+Learn python scripts and try some python scripts in local setup.
+Try pipeline script in local jenkins setup.
+pom update for rules service.
+Learn Devops tools.
+
+Thanks,
+S.Aravindan
+
+07.09.18
+Hi Sir,
+       The status summary as follows for the day!
+
+Learned python multiprocessing,nested function,lambda functions..
+Learned p2a migration.
+Manually check logs in all environment ELK.
+Install curator in Test Environment.
+
+Thanks,
+S.Aravindan
+
+08.09.18
+Hi Sir,
+       The status summary as follows for the day!
+
+
+Try some python programs in local setup.
+Learned Ansible and install in local setup.
+Try Ansible playbook in local setup for configuration management.
+Learned Ansible yaml syntax and commands.
+Try apache logs dashboard for kibana in local ELK.
+
+Thanks,
+S.Aravindan
+
+10.09.18
+Learn difference between saltstack and ansible.
+Learn ansible yaml syntax.
+Try code for cm in local setup using ansible configuration.
+Learning ansible commands.
+Learning ansible playbook and try playbook examples in local.
+Learn python scripts.
+
+11.09.18
+
+Learn ansible yaml syntax for replace,packages.
+Try some python scripts using dictionary,sets,tuples,list in local setup.
+Learn Flink cluster with jobmanager,task manager setup for high availability configuration using zookeeper.
+
+12.09.18
+
+Update filebeat in test environment.(older filebeat loads slowly)
+Learn and try python scripts using json dumps,load.
+Try pipeline scripts in local jenkins setup.
+Learn ansible playbook syntax and try some playbook configuration in local setup. 
+
+14.09.18
+
+Update filebeat in test environment CM machines.
+Learn and try python using json,flask,list methods in local.
+Try ansible playbook configuration for ppm.
+Debug issue in Devint ELK.(logstash grok pattern failed).
+
+15.09.18
+
+Hi Sir,
+      The status summary as follows for the day!
+
+Upgrade Stage 5.x to 6.x elasticsearch,kibana,logstash.
+Created Dashboards in Kibana UI for STAGE environment for the following parameters,
+i)STAGE-DocGen Error Logs
+ii)Document Uploaded Successfully
+iii)Exception occurs while getting on GetResponse
+iv)HTTP STATUS
+v)Duplicate docnames found
+Add apm-server to satge ELK.
+
+17.09.18
+
+Hi Sir,
+      The status summary as follows for the day!
+
+Upgrade filebeat in stage and test cm machines.
+Install filebeat in stage orchestrtaion server.
+Debug issue in stage ELK.
+Add dashboards in stage ELK.
+Add visualization in sandbox,prod ELK.
+
+18.09.18
+
+Hi Sir,
+      The status summary as follows for the day!
+
+Debug issue in Test ELK environment.(types mismatch)
+Upgrade sandbox ELK 5.x to 6.x.
+Upgrade filebeat in sandbox cm machines.
+Add visualization in sandbox ELK.
+
+19.09.18
+
+Hi Sir,
+      The status summary as follows for the day!
+
+• 15535 - Created 2.20.1 branch from Stable 2.20.0 branch
+• 15536 - Updated SNAPSHOT version in java projects pom.xml file.
+• Debug issue in DEVINT and Stage ELK(down environments because of logs are in red state).
+• Discard changes for snapshots build for 30 days in all p2a environments.
+• Backup Devint logs in Devint ELK to backup repo.
+
+20.09.18
+Hi Sir,
+      The status summary as follows for the day!
+
+
+Learn Dynamic mapping.
+On HIGRDS-15968: Create and Restore SNAPSHOT Backup for logs in DEVINT. ELK.
+On HIGRDS-15961: Upgrade Stage and Sandbox ELK from 5.x to 6.x.
+Add monitoring for logstash in DEVINT,Stage,Sandbox,Test,Prod environments.	
+
+21.09.18
+
+Hi Sir,
+      The status summary as follows for the day!
+
+Create and Restore SNAPSHOT Backup for logs in PROD ELK.
+Upgrade elasticsearch,logstash,kibana,filebeat from 5.x to 6.x version.
+Upgrade filebeat in sandbox,Devint cm machines.
+
+22.09.18
+Add monitoring for logstash in DEVINT,Stage,Sandbox,Test,Prod environments.
+
+Debug issue in Prod Elk.(upgrade failed)
+
+upgrade filebeat in all ELK environments to 6.x.
+
+Learn flink cluster setup.
+
+24.09.18
+
+Hi Sir,
+      The status summary as follows for the day!
+
+Learn AWS EC2 instance setup.
+Install elastalert using docker in stage ELK environment.
+Debug issue in stage ELK.(indices mismatch and mapping failed)
+Add Visualizations in Stage ELK.
+
+25.09.18
+
+Hi Sir,
+      The status summary as follows for the day!
+
+Add Dashboards for accesslogs server response,service docs count in sandbox,prod ELK.
+Debug issue in Sandbox ELK(cm machine logs not came).
+Learn marklogic.
+
+26.09.18
+
+Hi Sir,
+      The status summary as follows for the day!
+
+Added dashboards for server response,p2a_service calls in stage ELK environment.
+Learned Timelion syntax.
+Add timelion for server response,p2a_services in all ELK environments.
+Learned how to setup HDFS.
+Learned docker swarm, docker-compose,docker stack syntax and how to create yaml files.
+
+Thanks,
+S.Aravindan 
+
+Today status: 
+Hi Sir,
+      The status summary as follows for the day!
+
+Try elastalert UI plugin in local server.
+Learn Docker compose,swarm file commands. 
+Added kibana-plugins dotplot and radar for visualization in Devint ELK.
+Install and configure hdfs setup for flink cluster. 
+
+Thanks,
+S.Aravindan 

@@ -1,0 +1,66 @@
+POST /indexname/type/(optional)id/
+{
+}
+PUT /indexname/type
+{
+}
+
+
+
+geoip.conf
+input { stdin {} }
+filter {
+grok {
+match => { "message" => "%{TIMESTAMP_ISO8601:system_timestamp} (CPU:%{NUMBER:cpu})|(Memory:%{NUMBER:memory})" }
+}
+geoip {
+      source => "clientip"
+      target => "geoip"
+       add_tag => [ "devint-geoip" ]
+      add_field => [ "[geoip][coordinates]", "%{[geoip][longitude]}" ]
+      add_field => [ "[geoip][coordinates]", "%{[geoip][latitude]}"  ]
+  }
+   mutate {
+      convert => [ "[geoip][coordinates]", "float"]
+  }
+ }
+output {
+elasticsearch { index => "apache-%{+YYYY.MM.dd}" }
+stdout { codec => "rubydebug" }
+}
+
+
+crontab email /var/spool/mail/root
+
+manual delete of logs:
+curl -GET http://localhost:9200/_cat/indices
+curl -XDELETE http://localhost:9200/
+
+
+
+change permission:
+chown -R kibana:kibana /var/run/kibana.pid
+chmod 644 /var/run/kibana.pid
+6->4+2+0 4-read,write,not execute
+
+
+filebeat test config
+filebeat test output
+filebeat -c filebeat.yml -e -v (or) filebeat -e
+telnet ip port
+
+change tls->ssl publish events failed connection reset by peers
+
+strace -fp ip_address //pid for ip_address
+netstat -tunlp
+netstat -anop
+telnet ip_address port
+
+dry-run:nothing will be changed only simulate
+curator --dry-run --config curator.yml ACTION_FILE.yml >> log.txt
+
+changes:
+curator --config curator.yml ACTION_FILE.yml >> log.txt
+
+crontab:
+* * * * * curator --config curator/curator.yml curator/ACTION_FILE.yml >> curator/log.txt

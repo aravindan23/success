@@ -1,0 +1,13 @@
+permanent address:No.21/5,thaddikaran street,avarapakkam,tindivanam,villupuram district-604001 
+present address:No.69/2,srinivas apartment,kannapa nagar,kottivakkam,thiruvanmiyur-600041
+
+208.67.222.222
+10.6.1.59
+
+
+/var/cache/yum/x86-64/6server/salt-latest/packages
+
+
+salt-run jobs.list_jobs
+salt-run jobs.lookup_jid 20130916125524463507
+sudo salt '*' state.highstate -l debug

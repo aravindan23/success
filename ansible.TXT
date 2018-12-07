@@ -1,0 +1,18 @@
+ssh-keygen -RSA keygeneration
+ssh-copy-id user@hostname -copy key to host
+ansible -m ping all -machines ping
+ansible-playbook yml_filename -start playbooks
+ansible hostname -m setup -provide json of host
+ansible atlanta -a cmd -f 10 //10 parallel process
+ansible atlanta -a cmd -username // different users
+ansible raleigh -m shell -a cmd
+ansible {all,webserver,dbserver} -m {user,yum,service..} -a cmd=>{"name=filebeat state=started"}
+
+yaml:
+---
+- hosts: 10.6.4.30
+- tasks:
+      - name: start filebeat
+        service:
+          name: filebeat
+          state: {started,stopped,running..}

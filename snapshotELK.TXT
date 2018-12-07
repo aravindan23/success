@@ -1,0 +1,57 @@
+*create a folder under /etc/elasticsearch named backup
+mkdir -p /etc/elasticsearch/backup
+
+*editing the /etc/elasticsearch/elasticsearch.yml config file and adding the following at the end of the file
+path.repo: ["/etc/elasticsearch/backup"]
+
+*restart the elasticsearch service
+systemctl restart elasticsearch
+
+*the backup path is writable by the elasticsearch user
+chown -R elasticsearch. /etc/elasticsearch/backup
+
+*First elasticsearch needs to know the backup path by registering a backup repository
+curl -XPUT 'http://localhost:9200/_snapshot/my_backup' -d {
+  "type": "fs",
+  "settings": {
+     "location": "/etc/elasticsearch/backup",
+     "compress": true
+  }
+}'
+
+PUT /_snapshot/my_backup
+{
+"type": "fs",
+  "settings": {
+     "location": "/etc/elasticsearch/backup",
+     "compress": true
+  }
+}
+
+*do a full backup using a single command
+curl -XPUT "localhost:9200/_snapshot/my_backup/prodsnapshot?wait_for_completion=true"
+//PUT /_snapshot/my_backup/devsnapshot/wait_for_completion=true
+
+*restore a snapshot it cannot be easier
+curl -XPOST "localhost:9200/_snapshot/my_backup/devsnapshot/_restore?wait_for_completion=true"
+
+*list your snapshots by running the following curl command
+curl -XGET 'localhost:9200/_snapshot/my_backup/_all?pretty'
+
+*delete the snapshot 
+curl -XDELETE 'localhost:9200/_snapshot/my_backup/latest'
+
+*don't put the wait_for_completion=true 
+curl -XGET -u zozo http://localhost:9200/_snapshot/my_backup/snapshot_3/_status?pretty
+
+
+
+indices snapshot
+PUT _snapshot/my_backup/devsnapshot
+{
+    "indices": "devint-java-log"
+}
+
+particular day logs:
+PUT /_snapshot/my_backup/<snapshot-{now/w}>
+PUT /_snapshot/my_backup/%3Csnapshot-%7Bnow%2Fd%7D%3E

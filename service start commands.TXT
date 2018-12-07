@@ -1,0 +1,86 @@
+Services Stop/Start up:
+
+service hrservices stop
+
+service hrservices start 
+
+Process Check:
+
+ps -ef | grep java
+
+Services Running Status:
+
+tail -f /opt/apache/tomcat/logs/catalina.out
+
+Version Check:
+
+curl http://localhost:8080/cm/version
+
+curl http://localhost:8080/ppm/version
+
+curl http://localhost:8080/mcm/version
+
+curl http://localhost:8080/nm/version
+
+curl http://localhost:8080/translation/version
+
+curl http://localhost:8080/search/version
+
+curl http://localhost:8080/reports/version
+
+curl http://localhost:8080/datafeed/version
+
+curl http://localhost:8080/rules/version
+
+curl http://localhost:8080/cm/version
+
+curl http://localhost:7070/gateway/version (BLDINT & DEVINT)
+
+curl http://localhost:8080/gateway/version
+
+
+
+Salt Deployment Commands:
+
+yum install salt-master
+
+vim /etc/salt/master
+
+yum install salt-minion
+
+vim /etc/salt/minion
+
+service salt-minion restart
+
+Add minion’s private key to salt-master. -L is used to list keys and -A is for accepting:
+
+salt-key -F master
+
+Accepted / Denied: salt-key -L
+
+Accept keys: salt-key -A
+
+salt-version: salt --versions-report
+
+salt-minion test.ping
+
+Disk Usage: salt '*' disk.usage
+
+Network Interfaces: salt '*' network.interfaces
+
+Execution Module: salt '*' sys.doc
+
+Arguments for a Function Call: salt '*' sys.doc pkg.install
+
+
+Minion Disk Usage: salt 'minion*' disk.usage
+
+
+path:
+
+/srv/salt/services
+services:qaint,devint,base
+
+/etc/salt/master or /minion
+
+/var/log/salt/master-logs checking

@@ -1,0 +1,31 @@
+mapping of index:
+GET devint-java-log*/_mapping/doc
+
+GET /_cat/indices
+GET /_cat/recovery
+GET /_cat/health
+GET _cat/repositories
+GET /_snapshot/_status
+GET /_nodes?pretty
+GET /_snapshot/my_backup/_all?pretty
+
+create snapshot with today date:
+PUT /_snapshot/my_backup/<snapshot-{now/d}>
+PUT /_snapshot/my_backup/%3Csnapshot-%7Bnow%2Fd%7D%3E
+
+PUT /_snapshot/my_backup
+{
+"type": "fs",
+"settings": {
+"slocation": "/etc/elasticsearch/backup",
+"compress": true
+}
+}
+
+curl -XGET http://localhost:9200/_cluster/stats?pretty
+
+curl -XGET 'http://localhost:9200/_cluster/health?pretty=true'
+
+curl -XGET 'http://localhost:9200/_cat/count?v'
+
+curl -XGET 'http://localhost:9200/_settings?pretty'

@@ -1,0 +1,45 @@
+kibanabrowser:
+10.6.7.39-kibanaadmin,HighRoads_1234
+10.239.2.56-kibanaadmin,abcd123
+10.46.8.53-kibanaadmin,abcd1234
+10.46.2.22-kibanaadmin,kibana1234
+10.46.3.58-kibanaadmin,abcd@123
+10.46.3.24-kibanaadmin,abcd@1234
+
+10.6.4.17-root,abcd123 pomfileupdate
+
+10.6.7.39-root,abcd123 localserver (Local ELK) - SSH
+
+Jbox 192.168.2.108  tdjtemp / HighRoads_1234,TeraFast_1234
+     192.168.2.111 tdjtemp / HighRoads_123,tera123
+
+elkservers:
+
+prod-10.46.2.22 root / K1baNa@1217
+stage-10.46.8.53 root / K1baNa@1217
+sandbox-10.46.3.58 root / K1baNa@1217
+devint-10.239.2.56 root / K1baNa@1217
+test-10.46.3.24 saltadmin/$a1taDmin#
+
+orchestration server:
+prod:10.46.2.62 saltadmin / saltadmin
+stage:10.46.2.196 saltadmin / saltadmin
+devint:10.238.2.35:8082 saltadmin / $a1taDmin#
+
+flink cluster:
+10.238.8.236 saltadmin/saltadmin hadoop/hadoop
+
+test servers:
+00-test-01-00.highroads.local - 10.46.7.61
+00-test-01-01.highroads.local - 10.46.7.79
+00-TEST-04-01.highroads.local - 10.46.8.111
+00-TEST-04-00.highroads.local - 10.46.8.10
+00-test-elk-00.highroads.local - 10.46.3.24
+00-test-orch-00.highroads.local -10.46.7.209
+saltadmin / $a1taDmin#
+
+checking:10.6.4.30 root/HighRoads_1234
+jenkins-10.239.2.182:8080-barathr / Raja123!
+jenkins -10.239.2.182:8080
+Username: sbala
+Password: hG9@x8Q7

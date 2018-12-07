@@ -1,0 +1,50 @@
+docker filebeat:
+
+to run container:
+docker run -d -it --name filebeat1 -v /root/filebeat/filebeat.yml:/filebeat.yml -v /etc/pki/tls/certs/logstash-forwarder.crt:/etc/pki/tls/certs/logstash-forwarder.crt -v /var/log/p2a:/var/log/p2a prima/filebeat:latest 
+
+to check available container:
+docker ps --all
+
+check log:
+docker logs filebeat1
+
+docker stop container
+
+docker exec -it filebeat1 "/bin/bash"
+
+docker run -it imagename "/bin/bash"
+
+docker rmi -f imageid
+
+docker rm -f containerid or image id
+
+exited container remove:
+docker rm $(docker ps -a -f status=exited -q)  
+
+docker logs containername
+
+docker build -t . Dockerfile
+
+apt-get update
+yum update
+apt-get install package
+yum install package
+yum remove package(remove packages)
+rpm -e rpmpackage(remove rpm files)
+
+Dockerfile syntaxses:
+FROM               EX:FROM node:6,ubuntu,centos:6
+MAINTAINER         EX:AUTHOR
+COPY               package.json /usr/src/app,. /USR/APP
+RUN                YUM Install elast
+WORKDIR            /usr/src/app
+EXPOSE             ex:4000,3000(ports)
+CMD                ex:CMD ["npm","start"]
+
+docker compose:
+
+docker-compose up {-d}detached mode run in background
+docker-compose stop
+docker-compose down --volumes
+docer-compose ps

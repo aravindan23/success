@@ -1,0 +1,11 @@
+https://gerrit.insurance-engine.com/#/q/status:open,n,z    Gobala / Ayya123! gerrit account
+
+https://sso.secureserver.net/?app=email&realm=pass&path=%2Fwebmail.php%3Flogin%3D1 saravind@terafastnet.com / changeme email
+
+http://bldint-anthem.highroads.local/app/ qatest@anthem.com / test
+
+https://dev-650707.oktapreview.com/
+
+jira:
+https://jira.highroads.com/secure/Dashboard.jspa
+Gerritwatcher / HighR@ads

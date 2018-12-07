@@ -1,0 +1,33 @@
+User ID - 136735
+
+Password - 1644787
+
+
+https://www.elastic.co/guide/en/elastic-stack/current/upgrading-elastic-stack.html
+
+upgrade elasticsearch
+https://www.elastic.co/guide/en/elasticsearch/reference/6.3/rolling-upgrades.html
+
+upgrade kibana
+https://www.elastic.co/guide/en/kibana/6.3/upgrade-standard.html
+
+kibana index out of date
+curl -X DELETE -u elastic -p http://localhost:9200/.kibana
+
+upgrade logstash
+https://www.elastic.co/guide/en/logstash/6.3/upgrading-using-direct-download.html
+
+APM
+https://www.elastic.co/guide/en/apm/get-started/current/install-and-run.html
+
+Different Filebeat
+https://logz.io/blog/beats-tutorial/
+
+check status of elk:
+curl -XGET 'localhost:9600/_node/stats/pipeline?pretty'
+
+check process:
+curl -XGET 'localhost:9600/_node/stats/process?pretty'
+
+
+

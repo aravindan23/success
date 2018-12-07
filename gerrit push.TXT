@@ -1,0 +1,116 @@
+git add app/scripts/controllers/media-management/generate-document.js app/scripts/services/media-management/document-data-factory.js
+git commit -m "HIGRDS-1915-Modify UI search to look for all existing template doc types"
+git push origin HEAD:refs/for/master---->Get change id from error
+git commit --amend(paste the change id in last)
+git push origin HEAD:refs/for/Main
+
+git push origin Main
+
+
+merge branch:
+git clone ssh://gobala@gerrit.insurance-engine.com:29418/<project> 
+cd <project>
+gitdir=$(git rev-parse --git-dir); scp -p -P 29418 gobala@gerrit.insurance-engine.com:hooks/commit-msg ${gitdir}/hooks/ 
+git checkout Release-2.17.0
+git pull
+git checkout Main
+git pull
+git checkout -b merge_2.17.0_to_main
+git rebase Main
+git merge Release-2.17.0
+<resolve conflicts, use 'git add <file> [...]' to mark resolution>
+git commit --amend #add comment
+git push origin HEAD:refs/for/Main
+
+HIGRDS-12468 Anthem Inbound datafeed - NEW cost share types for Online ...	Merged	Gobalakrishnan Ayyappan
+	datafeed-service	Main
+  
+
+  
+conflict:
+
+	 	
+
+
+git reset HEAD~
+gitdir=$(git rev-parse --git-dir); curl http://10.238.15.121:8081/artifactory/git-hooks/commit-msg -o ${gitdir}/hooks/commit-msg; chmod +x ${gitdir}/hooks/commit-msg
+
+
+  commons      .-                                 
+  batch-service  -  
+  config --                             
+  cm-service      .-                                                       agm  .-        
+  datafeed-service .-                             
+  delivery-service .-                
+  event-service .-
+  etl-service   .-                          
+  gateway-service .- 
+  gdm .-                             
+  mcm-service     .-                              
+  nm-service       .-                           
+  orchestration     .-                            
+  ppm-service       .-                            
+  report-integration-service .-                    
+  report-service .-                               
+  rules-service    .-                                    
+  search-service     .-                   
+  translation-service  .-                             
+  workflow-service      .-                 
+  p2a-libs                                 
+  p2a-ui .-                                       
+  marklogic .-                          
+  Distribution                                                  
+  DistributionAPI                               
+  DocGen                                                               
+  MM                                                                   
+  Recipient                                           
+                         
+       
+sed -i 's/2.18.0-SNAPSHOT/2.18.1-SNAPSHOT/g' pom.xml
+
+git checkout Main
+git pull
+sed -i 's/2.16.0-SNAPSHOT/2.17.0-SNAPSHOT/g' pom.xml
+git diff
+git add pom.xml
+git commit -m "HIGRDS-13081: Update SNAPSHOT version in java projects pom.xml file"
+git push origin HEAD:refs/for/Release-2.18.1
+
+merge conflict-git merge --reset
+ssh -p 29418 10.239.2.116 gerrit plugin install -n reviewers.jar reviewers.jar
+ssh -p 29418 gobala@10.239.2.201 gerrit plugin install -n reviewers.jar - <reviewers-2.12.2.jar
+wget https://gerrit-ci.gerritforge.com/view/Plugins-stable-2.11/job/plugin-reviewers-stable-2.11/14/artifact/buck-out/gen/plugins/reviewers/reviewers.jar
+
+root@mravi-virtual-machine:~/HR_SOURCE/p2a-ui# git push --all -u
+Total 0 (delta 0), reused 0 (delta 0)
+remote: Processing changes: closed: 4186, refs: 2, done    
+To ssh://gobala@gerrit.insurance-engine.com:29418/p2a-ui
+ * [new branch]      revert10052 -> revert10052
+ * [new branch]      test_br -> test_br
+ ! [rejected]        Main -> Main (non-fast-forward)
+ ! [rejected]        Release-2.11.0 -> Release-2.11.0 (non-fast-forward)
+ 
+ 
+ 
+ 
+ 
+ git config --global url.git://github.com/.insteadOf https://github.com/
+ 
+ 
+ 
+ [jira]
+        url = https://highroads.atlassian.net
+        username = gerritWatcher
+        commentOnRefUpdatedGitWeb = false   # to comment gitweb comments on jira
+[commentLink "jira"]
+        match = ([A-Z]+-[0-9]+)
+        html = <a href=\"https://highroads.atlassian.net/browse/$1\">$1</a>
+        association = SUGGESTED
+        
+        
+change-merged     comment-added     patchset-created  updateJira.pl
+12302
+7177
+
+
+patchset-created: --change I0013a6467c64034de1c774cea007e9d9478a89a2 --change-url https://gerrit.insurance-engine.com/5504

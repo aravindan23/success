@@ -1,0 +1,28 @@
+network commands:
+
+netstat {-tunlp,-tulnp,-actnp,-ano}
+traceroute host{for packets transport route}
+dig //return name servers
+nmap -p port host
+telnet host port
+nslookup //return nameservers
+scp current_file user@host:/file //file copy to remote
+scp -r current_file user@host:/file //directory copy to remote
+w
+ifup eth0
+ifdown eth0
+
+sed -i 's/orig/change/g' filename
+s-substitute,g-global
+hostnamectl set-hostname host_name
+su - user_name
+useradd -d path user_name
+passwd password
+
+ls|wc -l //count directories
+ps -A //all running process
+
+netstat -an|grep -c SYN_RECV
+netstat -plnt
+HIGRDS-15961
+Upgrade Stage and Sandbox ELK from 5.x to 6.x	

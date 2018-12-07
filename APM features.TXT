@@ -1,0 +1,13 @@
+With APM you can automatically collect detailed performance information from inside your service with only minor changes 
+to your code. For example APM agents can measure the response time for incoming requests, time spent in database queries,
+calls to caches, external HTTP requests, etc. This makes it easier to pinpoint and fix performance problems quickly.
+
+The agents hook into your service and start collecting performance metrics and errors once it starts.
+
+
+https://artifacts.elastic.co/downloads/apm-server/apm-server-6.3.1-x86_64.rpm
+
+https://www.elastic.co/guide/en/apm/server/current/setup-repositories.html
+
+watcher features
+https://www.elastic.co/guide/en/elasticsearch/reference/current/notification-settings.html#hipchat-notification-settings
